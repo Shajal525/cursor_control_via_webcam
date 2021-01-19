@@ -169,7 +169,7 @@ def detect(save_img=False):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', nargs='+', type=str, default='weights/First_model.pt', help='model.pt path(s)')
+    parser.add_argument('--weights', nargs='+', type=str, default='pretrained_custom_model/First_model.pt', help='model.pt path(s)')
     parser.add_argument('--source', type=str, default='http://192.168.31.69:4747/video', help='source')  # file/folder, 0 for webcam
     parser.add_argument('--img-size', type=int, default=416, help='inference size (pixels)')
     parser.add_argument('--conf-thres', type=float, default=0.25, help='object confidence threshold')
@@ -182,7 +182,7 @@ if __name__ == '__main__':
     parser.add_argument('--agnostic-nms', action='store_true', help='class-agnostic NMS')
     parser.add_argument('--augment', action='store_true', help='augmented inference')
     parser.add_argument('--update', action='store_true', help='update all models')
-    parser.add_argument('--project', default='runs/detect', help='save results to project/name')
+    parser.add_argument('--project', default='../runs/detect', help='save results to project/name')
     parser.add_argument('--name', default='exp', help='save results to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     opt = parser.parse_args()

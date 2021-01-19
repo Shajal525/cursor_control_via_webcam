@@ -3,10 +3,11 @@ import time
 prev_x = -1 
 prev_y = 0
 prev_time = 0
-mouse_speed = 3.0       # Intensity of  mouse movement speed
-movement_thrashold = 9
+mouse_speed = 3.5       # Intensity of  mouse movement speed
+movement_thrashold = 8
 time_thrashold = 1
 pyautogui.PAUSE = 0     # Zero delay for movement
+click_delay = 0.8
 
 
 def move_cursor(cur_x, cur_y):
@@ -41,7 +42,7 @@ def single_click_register():
     print('Single click registered.')
     # pyautogui.PAUSE = 0.5
     # pyautogui.click(prev_x, prev_y)
-    pyautogui.click(pyautogui.position(), duration=0.5)
+    pyautogui.click(pyautogui.position(), duration=click_delay)
     # pyautogui.PAUSE = 0
 
 
@@ -52,7 +53,7 @@ def double_click_register():
     print('Double click registered.')
     # pyautogui.PAUSE = 0.5
     # pyautogui.click(prev_x, prev_y, clicks=2)
-    pyautogui.click(pyautogui.position(), clicks=2, duration=0.5)
+    pyautogui.click(pyautogui.position(), clicks=2, duration=click_delay)
     # pyautogui.PAUSE = 0
 
 
@@ -63,5 +64,5 @@ def right_click_register():
     print('Right click registered.')
     # pyautogui.PAUSE = 0.5
     # pyautogui.click(prev_x, prev_y, button='right')
-    pyautogui.click(pyautogui.position(), button='right', duration=0.5)
+    pyautogui.click(pyautogui.position(), button='right', duration=click_delay)
     # pyautogui.PAUSE = 0

@@ -15,7 +15,9 @@ def control(xoxo, conf, cls):
         return
 
     # Ignore it if accuracy is less
-    if accuracy < accuracy_thrashold:
+    if type_selected == 3 and accuracy < accuracy_thrashold:
+        return
+    if type_selected !=3 and accuracy < 0.75:
         return
 
     if class_names[type_selected] == 'Movement':
