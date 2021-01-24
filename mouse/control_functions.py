@@ -3,14 +3,14 @@ import time
 prev_x = -1 
 prev_y = 0
 prev_time = 0
-mouse_speed = 3.5       # Intensity of  mouse movement speed
+mouse_speed = 4       # Intensity of  mouse movement speed
 movement_thrashold = 8
 time_thrashold = 1
 pyautogui.PAUSE = 0     # Zero delay for movement
 click_delay = 0.8
 
 
-def move_cursor(cur_x, cur_y):
+def move_cursor(cur_x, cur_y, is_fast):
     global prev_x, prev_y, mouse_speed, movement_thrashold, prev_time, time_thrashold
     cur_time = time.time()
     # If mouse is just selected
@@ -24,12 +24,14 @@ def move_cursor(cur_x, cur_y):
         return
 
     # Move mouse
-    # Here 250 is choosen without any reason. Can adjust the value if needed
     x_move = (cur_x - prev_x) * mouse_speed
     y_move = (cur_y - prev_y) * mouse_speed
+    if is_fast:
+        x_move = x_move * mouse_speed * 0.70
+        y_move = y_move * mouse_speed * 0.70
     cursor_x, cursor_y = pyautogui.position()
     if pyautogui.onScreen(cursor_x+x_move, cursor_y+y_move):
-        pyautogui.moveRel(x_move, y_move, duration=0.5)
+        pyautogui.moveRel(x_move, y_move, duration=0.01)
         # pyautogui.moveTo(cursor_x+x_move, cursor_y+y_move, duration = time_dif/100)
 
     prev_x, prev_y = cur_x, cur_y

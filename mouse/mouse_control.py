@@ -1,7 +1,8 @@
 from mouse import control_functions
 import torch
 accuracy_thrashold = 0.40                     # If accuracy is less than this, ignore it
-class_names = ['SingleClick', 'RightClick', 'DoubleClick', 'Movement']
+click_thrashold = 0.60
+class_names = ['Movement', 'SingleClick', 'RightClick', 'DoubleClick', 'FastMovement']
 
 
 def control(xoxo, conf, cls):
@@ -14,19 +15,28 @@ def control(xoxo, conf, cls):
     else:
         return
 
+    print(f'Cur_x is: {cur_x}, cur_y is: {cur_y}, accuracy is: {accuracy}, type is: {type_selected}')
+
     # Ignore it if accuracy is less
-    if type_selected == 3 and accuracy < accuracy_thrashold:
+    if (type_selected == 0 or type_selected == 4) and accuracy < accuracy_thrashold:
         return
-    if type_selected !=3 and accuracy < 0.75:
+    if type_selected != 0 and type_selected != 4 and accuracy < click_thrashold:
         return
 
-    if class_names[type_selected] == 'Movement':
-        control_functions.move_cursor(cur_x, cur_y)
-    elif class_names[type_selected] == 'SingleClick':
+    # class_name[0] = 'Movement'
+    if type_selected == 0:
+        control_functions.move_cursor(cur_x, cur_y, 0)
+    # class_name[4] = 'FastMovement'
+    elif type_selected == 4:
+        control_functions.move_cursor(cur_x, cur_y, 1)
+    # class_name[1] = 'SingleClick'
+    elif type_selected == 1:
         control_functions.single_click_register()
-    elif class_names[type_selected] == 'DoubleClick':
+    # class_name[3] = 'DoubleClick'
+    elif type_selected == 3:
         control_functions.double_click_register()
-    elif class_names[type_selected] == 'RightClick':
+    # class_name[2] = 'RightClick'
+    elif type_selected == 2:
         control_functions.right_click_register()
     else:
         return

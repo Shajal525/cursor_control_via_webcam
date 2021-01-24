@@ -58,10 +58,11 @@ def detect(save_img=False):
     # Get names and colors
     names = model.module.names if hasattr(model, 'module') else model.names
     # Added Code. Fixing class names
-    names[0] = 'Single Click'
-    names[1] = 'Right Click'
-    names[2] = 'Double Click'
-    names[3] = 'Movement'
+    names[0] = 'Movement'
+    names[1] = 'Single Click'
+    names[2] = 'Right Click'
+    names[3] = 'Double Click'
+    names[4] = 'Fast Movement'
     # End adding
     colors = [[random.randint(0, 255) for _ in range(3)] for _ in names]
 
@@ -106,6 +107,8 @@ def detect(save_img=False):
             if len(det):
                 # Rescale boxes from img_size to im0 size
                 det[:, :4] = scale_coords(img.shape[2:], det[:, :4], im0.shape).round()
+
+                # print('TESTING!!!!!!')
 
                 # Print results
                 for c in det[:, -1].unique():
@@ -169,9 +172,9 @@ def detect(save_img=False):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', nargs='+', type=str, default='pretrained_custom_model/First_model.pt', help='model.pt path(s)')
+    parser.add_argument('--weights', nargs='+', type=str, default='pretrained_custom_model/Latest_model.pt', help='model.pt path(s)')
     parser.add_argument('--source', type=str, default='http://192.168.31.69:4747/video', help='source')  # file/folder, 0 for webcam
-    parser.add_argument('--img-size', type=int, default=416, help='inference size (pixels)')
+    parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
     parser.add_argument('--conf-thres', type=float, default=0.25, help='object confidence threshold')
     parser.add_argument('--iou-thres', type=float, default=0.45, help='IOU threshold for NMS')
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
