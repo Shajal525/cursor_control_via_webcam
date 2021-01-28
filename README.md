@@ -3,7 +3,7 @@ As with any Machine Learning project, the main challenge is to find the dataset.
 I was able to achieve 85% accuracy in training. If you like the project and want to improve the accuracy of the dataset, feel free to contact me. <br>
 After training my custom dataset, I used the saved weights and modified the yolo_v5 to detect different gesture of hand.<br>
 Here I used 5 types of gesture to control mouse movement. The picture below will illustrate the usage.<br>
-![use of different sign]()
+![use of different sign](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/signs.png)
 <br>
 ## Installation
 To use this smoothly, GPU is almost necessary. To utilize the GPU, install CUDA first. It is highly recommended to use a virtual environment. Then follow the instruction below:<br>
