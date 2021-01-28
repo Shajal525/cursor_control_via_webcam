@@ -25,6 +25,6 @@ If version of PyTorch does not match with CUDA version, upgrade PyTorch
   <img src="https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Single_Click.gif" width="49%" />
   <img src="https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Double_Click.gif" width="49%" /> 
 </p>
-<p float="center">
+<p align="center">
   <img src="https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Right_Click.gif" width=""/>
 </p>
