@@ -17,14 +17,12 @@ Default image size is 640. To use different size pass img-size argument. Ex.<br>
 If version of PyTorch does not match with CUDA version, upgrade PyTorch
 
 ## Instruction
-![movement](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Movement.gif) | ![fast movement](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Fast_Movement.gif)
-![single click](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Single_Click.gif) | ![double click](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Double_Click.gif) | ![right click](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Right_Click.gif)
 <p float="left">
-  <img src="https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Movement.gif" width="150" />
-  <img src="https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Fast_Movement.gif" width="150" /> 
+  <img src="https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Movement.gif" width="50%" />
+  <img src="https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Fast_Movement.gif" width="50%" /> 
 </p>
 <p float="left">
-  <img src="https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Single_Click.gif" width="100" />
-  <img src="ttps://    github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Double_Click.gif" width="100" /> 
-  <img src="https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Right_Click.gif" width="100" />
+  <img src="https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Single_Click.gif" width="33.33%" />
+  <img src="ttps://    github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Double_Click.gif" width="33.33%" /> 
+  <img src="https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Right_Click.gif" width="33.33%" />
 </p>
