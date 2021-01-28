@@ -2,7 +2,7 @@
 As with any Machine Learning project, the main challenge is to find the dataset. I couldn't find any proper dataset that I can use for this project. So I had to create my own dataset! It was very difficult to collect all these images and label them. I used more than 700 images for the training. Half of them are collected from Google, other half I clicked myself with my brother. After preparing dataset, the challenge was to train the data. I don't have powerful GPU to train this huge data. I invented that Google provides support for training dataset in Colab. They provide free GPU support. I took advantage of that and trained my dataset in Google Colab. I modified the script from Roboflow tutorial to train my dataset.
 I was able to achieve 85% accuracy in training. If you like the project and want to improve the accuracy of the dataset, feel free to contact me. <br>
 After training my custom dataset, I used the saved weights and modified the yolo_v5 to detect different gesture of hand.<br>
-Here I used 5 types of gesture to control mouse movement. The picture below will illustrate the usage.<br>
+Here I have used 5 types of gesture to control mouse movement. The picture below will illustrate the usage.<br>
 ![use of different sign](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/signs.png)
 <br>
 ## Installation
@@ -17,3 +17,8 @@ Default image size is 640. To use different size pass img-size argument. Ex.<br>
 If version of PyTorch does not match with CUDA version, upgrade PyTorch
 
 ## Instruction
+![movement](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Movement.gif)
+![fast movement](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Fast_Movement.gif)
+![single click](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Single_Click.gif)
+![double click](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Double_Click.gif)
+![right click](https://github.com/Shajal525/cursor_control_via_webcam/blob/master/images/Right_Click.gif)
